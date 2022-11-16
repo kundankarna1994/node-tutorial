@@ -56,8 +56,8 @@ const update = [
         })
         .custom(async (value, { req }) => {
             const { email } = req.body;
-            const model = await Model.findOne({ email });
-            if (model && model._id.toString() !== value) {
+            const model = await Model.findOne({ email }).where("_id").ne(value);
+            if (model) {
                 return Promise.reject("E-mail already in use");
             }
         }),
