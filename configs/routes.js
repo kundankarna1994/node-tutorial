@@ -6,6 +6,10 @@ const ROUTE_CONFIG = {
         FOLDER: path.join(__dirname, "..", "routes", "admin"),
         PREFIX: "/" + ADMIN_ROUTE_PREFIX,
     },
+    website: {
+        FOLDER: path.join(__dirname, "..", "routes", "website"),
+        PREFIX: "/",
+    },
 };
 
 module.exports = ROUTE_CONFIG;

@@ -10,5 +10,5 @@ router
     .patch(update, UserController.update)
     .delete(_delete, UserController._delete);
 
-router.get("/mail", UserController.mail);
+router.route("/current").get(UserController.current);
 module.exports = router;
