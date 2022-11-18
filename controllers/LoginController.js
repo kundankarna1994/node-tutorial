@@ -11,7 +11,6 @@ const login = asyncHandler(async (req, res) => {
         res.status(400).json({ message: "Invalid Credentials" });
     }
     const token = user.generateAuthToken(user);
-    console.log(token);
     res.header("x-auth-token", token).send({
         token: token,
         _id: user.id,

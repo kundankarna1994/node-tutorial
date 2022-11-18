@@ -1,8 +1,8 @@
 const { check, validationResult } = require("express-validator");
+const Model = require("../models/User");
 const login = [
     check("email")
         .trim()
-        .normalizeEmail()
         .not()
         .isEmpty()
         .withMessage("Invalid email address!")
@@ -13,7 +13,7 @@ const login = [
         .isEmpty()
         .isLength({ min: 6 })
         .withMessage("Invalid Password"),
-    (req, res, next) => {
+    async (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(422).json({ errors: errors.array() });

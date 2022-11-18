@@ -1,4 +1,4 @@
-const DB_URI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.krbv9nl.mongodb.net/?retryWrites=true&w=majority`;
+const DB_URI = `mongodb://localhost:27017/node`;
 const mongoose = require("mongoose");
 
 const DB_CONNECTION = async () => {
